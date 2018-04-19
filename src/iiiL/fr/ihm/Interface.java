@@ -4,7 +4,7 @@
  */
 package iiiL.fr.ihm;
 
-import iiiL.fr.functions;
+// import iiiL.fr.functions;
 
 /**
  * TODO commenter les responsabilités de la classe
