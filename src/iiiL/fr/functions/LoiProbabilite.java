@@ -14,6 +14,11 @@ import java.util.Scanner;
  */
 public class LoiProbabilite {
 	
+	/**
+	 * Loi uniforme générateur du système (ensemble N)
+	 * @param nbMax borne maximale de l'intervalle dans lequel la loi est définie
+	 * @return un nombre aléatoire entre 0 et la borne maximale
+	 */
 	public static int loiUniforme(int nbMax) {
 		/** Le résultat final */
 		int result = 0;
@@ -22,4 +27,23 @@ public class LoiProbabilite {
 		return result = (int)(Math.random() * nbMax); 
 	}
 	
+	/**
+	 * Loi exponentielle - Loi de probabilité : f(x) = lambda * exp(-lambda * x)
+	 * @param lambda reel positif représentant le paramètre de la loi exponentielle
+	 * @param x variable aléatoire
+	 * @return le résultat de la loi exponentielle après tirage
+	 */
+	public static double loiExponentielle(double lambda, int x) {
+		/** Le résultat final */
+		double result = 0;
+		
+		if (lambda < 0) {
+			System.out.println("Impossible ! Le paramètre est négatif !");
+			return result = -1;
+		} else {
+			return result = lambda * Math.exp(-lambda * x);
+		}
+	}
+	
+
 }

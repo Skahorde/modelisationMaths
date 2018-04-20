@@ -18,10 +18,15 @@ public class Interface {
      * @param args
      */
     public static void main(String[] args) {
-        /* 
-         * TEST LOI UNIFORME ENTRE 0 ET 100
-         */
-    	System.out.println(LoiProbabilite.loiUniforme(100));
+        // -------------------------------
+    	// --- Test de la loi uniforme ---
+    	// -------------------------------
+    	System.out.println("Loi uniforme sur [0;100[\nRésultat = " + LoiProbabilite.loiUniforme(100) + "\n");
+    	
+    	// ------------------------------------
+    	// --- Test de la loi exponentielle ---
+    	// ------------------------------------
+    	System.out.println("Loi exponentielle lambda = 0.004, borneMax = 365\nRésultat = " + LoiProbabilite.loiExponentielle(0.004, 365) + "\n");
     }
 
 }
