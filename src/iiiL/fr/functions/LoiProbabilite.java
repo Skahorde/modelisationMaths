@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * TODO commenter les responsabilités de la classe
- * @author Perez & Fock-Chow-Tho
+ * @author Sandrine FOCK-CHOW-THO & Emmanuel PEREZ
  *
  */
 public class LoiProbabilite {
