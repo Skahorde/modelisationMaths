@@ -35,7 +35,7 @@ public class LoiProbabilite {
 	 */
 	public static double loiExponentielle(double lambda, int x) {
 		/** Le résultat final */
-		double result = 0;
+		double result = 0.0;
 		
 		if (lambda < 0) {
 			System.out.println("Impossible ! Le paramètre est négatif !");
@@ -45,5 +45,21 @@ public class LoiProbabilite {
 		}
 	}
 	
-
+	/**
+	 * Loi de Poisson - Loi de probabilité : f(x) = exp(-lambda) * ((lambda^x)/(k!))
+	 * @param lambda reel positif représentant le paramètre de la loi exponentielle
+	 * @param x variable aléatoire
+	 * @return le résultat de la loi exponentielle après tirage
+	 */
+	public static double loiPoisson(double lambda, int x) {
+		/** Le résultat final */
+		double result = 0.0;
+		
+		if (lambda < 0 ) {
+			System.out.println("Impossible ! Le paramètre est négatif !");
+			return result = -1;
+		} else {
+			return result = Math.exp(-lambda) * ((Math.pow(lambda, x)/Calcul.factorielle(x)));
+		}
+	}
 }

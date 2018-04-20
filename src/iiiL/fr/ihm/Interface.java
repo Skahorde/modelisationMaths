@@ -4,6 +4,7 @@
  */
 package iiiL.fr.ihm;
 
+import iiiL.fr.functions.Calcul;
 import iiiL.fr.functions.LoiProbabilite;
 
 /**
@@ -18,7 +19,12 @@ public class Interface {
      * @param args
      */
     public static void main(String[] args) {
-        // -------------------------------
+    	// ------------------------------
+    	// --- Test de la factorielle ---
+    	// ------------------------------
+    	System.out.println("Factorielle\nRésultat = " + Calcul.factorielle(10) + "\n");
+    	
+    	// -------------------------------
     	// --- Test de la loi uniforme ---
     	// -------------------------------
     	System.out.println("Loi uniforme sur [0;100[\nRésultat = " + LoiProbabilite.loiUniforme(100) + "\n");
@@ -26,7 +32,13 @@ public class Interface {
     	// ------------------------------------
     	// --- Test de la loi exponentielle ---
     	// ------------------------------------
-    	System.out.println("Loi exponentielle lambda = 0.004, borneMax = 365\nRésultat = " + LoiProbabilite.loiExponentielle(0.004, 365) + "\n");
+    	System.out.println("Loi exponentielle -> lambda = 0.004, variable aléatoire = 365\nRésultat = " + LoiProbabilite.loiExponentielle(0.004, 365) + "\n");
+    
+    	// ---------------------------------
+    	// --- Test de la loi de Poisson ---
+    	// ---------------------------------
+    	System.out.println("Loi de Poisson -> lambda = 20, variable aléatoire = 10\nRésultat = " + LoiProbabilite.loiExponentielle(20, 10) + "\n");
+    
     }
 
 }
