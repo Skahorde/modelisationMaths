@@ -4,7 +4,7 @@
  */
 package iiiL.fr.ihm;
 
-// import iiiL.fr.functions;
+import iiiL.fr.functions.LoiProbabilite;
 
 /**
  * TODO commenter les responsabilités de la classe
@@ -18,8 +18,10 @@ public class Interface {
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        /* 
+         * TEST LOI UNIFORME ENTRE 0 ET 100
+         */
+    	System.out.println(LoiProbabilite.loiUniforme(100));
     }
 
 }
