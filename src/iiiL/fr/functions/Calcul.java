@@ -1,20 +1,28 @@
+/*
+ * Calcul.java                                          20 avr. 2018
+ * 3IL2 2017-2018 groupe B, ni copyright ni copyleft
+ */
 package iiiL.fr.functions;
 
+/**
+ * TODO commenter les responsabilités de la classe
+ * @author Sandrine FOCK-CHOW-THO & Emmanuel PEREZ
+ *
+ */
 public class Calcul {
-	/**
-	 * Calcule la factorielle d'un nombre entier
-	 * @param x le nombre dont il faut calculer la factorielle
-	 * @return le résultat
-	 */
-	public static int factorielle(int x) {
-		/** Le résultat final */
-		int result = 1;
-		
-		// On additionne chaque entier allant de x à 1
-		for (; x > 0; x --) {
-			result *= x;
-		}
-		
-		return result;
-	}
+
+    /**
+     * Calcul de la factorielle par la méthode itérative
+     * @param nombre Le nombre dont on veut calculer la factorielle
+     * @return Le résultat de la factorielle
+     */
+    public static int factorielle(int nombre) {
+        /** Le résultat final */
+        int result = 1;
+        
+        for (int i = 2; i <= nombre; i++) {
+            result *= i;
+        }
+        return result;
+    }
 }
