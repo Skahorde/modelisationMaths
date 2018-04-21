@@ -20,8 +20,8 @@ public class Calcul {
         /** Le résultat final */
         int result = 1;
         
-        for (int i = 2; i <= nombre; i++) {
-            result *= i;
+        for (; nombre > 0; nombre --) {
+            result *= nombre;
         }
         return result;
     }
