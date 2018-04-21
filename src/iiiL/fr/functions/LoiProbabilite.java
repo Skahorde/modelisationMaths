@@ -45,7 +45,7 @@ public class LoiProbabilite {
 	private static void initialiserTableau(int nbLignes) {
 		// Instanciation du tableau
 		tableauEffectifs = new int[nbLignes][3];
-
+		
 		// Initialisation des valeurs
 		for (int i = 0; i < nbLignes; i ++) {
 			tableauEffectifs[i][0] = i+1;
@@ -54,8 +54,12 @@ public class LoiProbabilite {
 		}
 	}
 
+	/**
+	 * Fonction permettant d'afficher le tableau
+	 */
 	public void afficherTableau() {
 		for (int i = 0; i < tableauEffectifs.length; i ++) {
+			System.out.print("|");
 			for (int j = 0; j < tableauEffectifs[0].length; j ++) {
 				System.out.print("\t" + tableauEffectifs[i][j] + "\t|");
 			}
