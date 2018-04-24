@@ -20,7 +20,7 @@ public class Interface {
 	private static int qteNbAleatoires = 300;
 	
 	/** Chemin où se trouve le fichier excel */
-	private static String path = "excel/khi2_macro.xlsm";
+	private static String path = "excel/khi2.xlsm";
 
     /**
      * TODO commenter le rôle de cette méthode
