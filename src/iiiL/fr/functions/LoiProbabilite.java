@@ -18,7 +18,7 @@ public class LoiProbabilite {
 	 * @param tailleListe la taille de la liste à renvoyer
 	 * @return une liste contenant des nombres aléatoires entre 0 et 1
 	 */
-	public static ArrayList<Double> loiUniforme(int tailleListe) {
+	public ArrayList<Double> loiUniforme(int tailleListe) {
 		/** Le résultat final */
 		ArrayList<Double> nbGeneres = new ArrayList<Double>();
 		
@@ -35,7 +35,7 @@ public class LoiProbabilite {
 	 * @param x variable aléatoire
 	 * @return le résultat de la loi exponentielle après tirage
 	 */
-	public static ArrayList<Double> loiExponentielle(ArrayList<Double> nbAléatoires, double lambda) {
+	public ArrayList<Double> loiExponentielle(ArrayList<Double> nbAléatoires, double lambda) {
 		/** Le résultat final */
 		ArrayList<Double> result = new ArrayList<Double>();
 		

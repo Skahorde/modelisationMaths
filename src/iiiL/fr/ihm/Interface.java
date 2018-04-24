@@ -14,29 +14,28 @@ import iiiL.fr.functions.LoiProbabilite;
  *
  */
 public class Interface {
+	/** Liste des données */
+	private static ArrayList<Double> donnees = new ArrayList<Double>();
+	/** Quantité de nombres à générer */
+	private static int qteNbAleatoires = 300;
+	
+	/** Chemin où se trouve le fichier excel */
+	private static String path = "excel/khi2.xlsx";
 
     /**
      * TODO commenter le rôle de cette méthode
      * @param args
      */
     public static void main(String[] args) {
-    
+    	System.out.println("--- DEBUT ---");
+    	// Simulation de la loi de probabilité
     	LoiProbabilite proba = new LoiProbabilite();
+    	donnees = proba.loiExponentielle(proba.loiUniforme(qteNbAleatoires), 4);
     	
-    	ArrayList<Double> test = new ArrayList<Double>();
-    	
-//    	test = proba.loiUniforme(300);
-//    	
-//    	for (int i = 0; i < test.size(); i ++) {
-//    		System.out.println(test.get(i));
-//    	}
-
-    	test = proba.loiExponentielle(proba.loiUniforme(300), 4.0);
-    	
-    	// Afficher liste 
-    	for (int i = 0; i < test.size(); i ++) {
-    		System.out.println(test.get(i));
-    	}
+    	// Traitement via Excel
+    	ExcelManager excelManager = new ExcelManager(path, "exponentielle");
+    	excelManager.writeExcelFile(donnees);
+    	System.out.println("--- FIN ---");
     }
 
 }
