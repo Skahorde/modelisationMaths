@@ -5,6 +5,7 @@
 package iiiL.fr.ihm;
 
 import iiiL.fr.functions.Calcul;
+import java.util.ArrayList;
 import iiiL.fr.functions.LoiProbabilite;
 
 /**
@@ -13,42 +14,30 @@ import iiiL.fr.functions.LoiProbabilite;
  *
  */
 public class Interface {
+	/** Liste des données */
+	private static ArrayList<Double> donnees = new ArrayList<Double>();
+	/** Quantité de nombres à générer */
+	private static int qteNbAleatoires = 300;
+	
+	/** Chemin où se trouve le fichier excel */
+	private static String path = "excel/khi2.xlsx";
 
     /**
      * TODO commenter le rôle de cette méthode
      * @param args
      */
     public static void main(String[] args) {
-    	// ------------------------------
-    	// --- Test de la factorielle ---
-    	// ------------------------------
-    	System.out.println("Factorielle\nRésultat = " + Calcul.factorielle(10) + "\n");
+
+    	System.out.println("--- DEBUT ---");
+    	// Simulation de la loi de probabilité
+    	LoiProbabilite proba = new LoiProbabilite();
+    	donnees = proba.loiExponentielle(proba.loiUniforme(qteNbAleatoires), 4);
     	
-    	// -------------------------------
-    	// --- Test de la loi uniforme ---
-    	// -------------------------------
-    	System.out.println("Loi uniforme sur [0;100[\nRésultat = " + LoiProbabilite.loiUniforme(100) + "\n");
-    	
-    	// ------------------------------------
-    	// --- Test de la loi exponentielle ---
-    	// ------------------------------------
-    	System.out.println("Loi exponentielle -> lambda = 0.004, variable aléatoire = 365\nRésultat = " + LoiProbabilite.loiExponentielle(0.004, 365) + "\n");
-    	
-    	// ---------------------------------
-        // --- Test de la loi normale ---
-        // ---------------------------------
-        System.out.println("Loi normale -> moyenne = 0, écart-type = 0.2, variable aléatoire = 50\nRésultat = " + LoiProbabilite.loiNormale(0, 0.2, 50) + "\n");
-    
-    	// ---------------------------------
-    	// --- Test de la loi de Poisson ---
-    	// ---------------------------------
-    	System.out.println("Loi de Poisson -> lambda = 20, variable aléatoire = 10\nRésultat = " + LoiProbabilite.loiExponentielle(20, 10) + "\n");
-    	
-    	// ---------------------------------
-        // --- Test de la loi de Weibull ---
-        // ---------------------------------
-        System.out.println("Loi de Weibull -> paramètre de forme k = 2, paramètre d'échelle lambda = 0.5 , variable aléatoire = 100\nRésultat = " + LoiProbabilite.loiDeWeibull(2, 0.5, 100) + "\n");
-    
+    	// Traitement via Excel
+    	ExcelManager excelManager = new ExcelManager(path, "exponentielle");
+    	excelManager.writeExcelFile(donnees);
+    	System.out.println("--- FIN ---");
+
     }
 
 }

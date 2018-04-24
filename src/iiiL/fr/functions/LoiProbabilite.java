@@ -4,8 +4,7 @@
  */
 package iiiL.fr.functions;
 
-import java.lang.Math;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * TODO commenter les responsabilités de la classe
@@ -16,15 +15,18 @@ public class LoiProbabilite {
 	
 	/**
 	 * Loi uniforme générateur du système (ensemble N)
-	 * @param nbMax borne maximale de l'intervalle dans lequel la loi est définie
-	 * @return un nombre aléatoire entre 0 et la borne maximale
+	 * @param tailleListe la taille de la liste à renvoyer
+	 * @return une liste contenant des nombres aléatoires entre 0 et 1
 	 */
-	public static int loiUniforme(int nbMax) {
+	public ArrayList<Double> loiUniforme(int tailleListe) {
 		/** Le résultat final */
-		int result = 0;
+		ArrayList<Double> nbGeneres = new ArrayList<Double>();
 		
-		// La fonction random() renvoie un nombre aléatoire entre 0 et nbMax non compris
-		return result = (int)(Math.random() * nbMax); 
+		for (int i = 0; i < tailleListe; i ++) {
+			nbGeneres.add(Math.random());
+		}
+		
+		return nbGeneres;
 	}
 	
 	/**
@@ -33,16 +35,17 @@ public class LoiProbabilite {
 	 * @param x variable aléatoire
 	 * @return le résultat de la loi exponentielle après tirage
 	 */
-	public static double loiExponentielle(double lambda, int x) {
+	public ArrayList<Double> loiExponentielle(ArrayList<Double> nbAléatoires, double lambda) {
 		/** Le résultat final */
-		double result = 0.0;
+		ArrayList<Double> result = new ArrayList<Double>();
 		
-		if (lambda < 0) {
-			System.out.println("Impossible ! Le paramètre est négatif !");
-			return result = -1;
-		} else {
-			return result = lambda * Math.exp(-lambda * x);
+		// Fonction inversée de la loi exponentielle
+		for (int i = 0; i < nbAléatoires.size(); i ++) {
+			double calcul = (-1.0/lambda) * (Math.log(nbAléatoires.get(i)));
+			result.add(calcul);
 		}
+		
+		return result;
 	}
 	
 	/**
