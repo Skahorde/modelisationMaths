@@ -4,6 +4,8 @@
  */
 package iiiL.fr.ihm;
 
+import java.util.ArrayList;
+
 import iiiL.fr.functions.LoiProbabilite;
 
 /**
@@ -18,15 +20,23 @@ public class Interface {
      * @param args
      */
     public static void main(String[] args) {
-        // -------------------------------
-    	// --- Test de la loi uniforme ---
-    	// -------------------------------
-    	System.out.println("Loi uniforme sur [0;100[\nRésultat = " + LoiProbabilite.loiUniforme(100) + "\n");
+    
+    	LoiProbabilite proba = new LoiProbabilite();
     	
-    	// ------------------------------------
-    	// --- Test de la loi exponentielle ---
-    	// ------------------------------------
-    	System.out.println("Loi exponentielle lambda = 0.004, borneMax = 365\nRésultat = " + LoiProbabilite.loiExponentielle(0.004, 365) + "\n");
+    	ArrayList<Double> test = new ArrayList<Double>();
+    	
+//    	test = proba.loiUniforme(300);
+//    	
+//    	for (int i = 0; i < test.size(); i ++) {
+//    		System.out.println(test.get(i));
+//    	}
+
+    	test = proba.loiExponentielle(proba.loiUniforme(300), 4.0);
+    	
+    	// Afficher liste 
+    	for (int i = 0; i < test.size(); i ++) {
+    		System.out.println(test.get(i));
+    	}
     }
 
 }
