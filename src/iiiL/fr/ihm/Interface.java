@@ -15,9 +15,7 @@ import iiiL.fr.functions.LoiProbabilite;
  */
 public class Interface {
 	/** Liste des données */
-	private static ArrayList<Double> donneesExponentielle = new ArrayList<Double>();
-	/** Quantité de nombres à générer */
-	private static int qteNbAleatoires = 300;
+	private static ArrayList<Double> donnees= new ArrayList<Double>();
 	
 	/** Chemin où se trouve le fichier excel */
 	private static String path = "excel/khi2.xlsm";
@@ -34,11 +32,20 @@ public class Interface {
     	LoiProbabilite proba = new LoiProbabilite();
     	
     	// Simulation de la loi exponentielle
-    	donneesExponentielle = proba.loiExponentielle(proba.loiUniforme(qteNbAleatoires), 4);
+    	donnees = proba.loiExponentielle(4.0);
+    	
+    	// Simulation de la loi de Poisson
+    	donnees = proba.loiPoisson();
+    	
+    	// Simulation de la loi normale
+    	donnees = proba.loiNormale();
+    	
+    	// Simulation de la loi de Weibull
+    	donnees = proba.loiDeWeibull(1, 3.25);
     	
     	// Envoi des données vers le fichier Excel
     	ExcelManager excelManager = new ExcelManager(path, "exponentielle");
-    	excelManager.writeExcelFile(donneesExponentielle);
+    	excelManager.writeExcelFile(donnees);
     	
     	
     	System.out.println("--- FIN ---");
