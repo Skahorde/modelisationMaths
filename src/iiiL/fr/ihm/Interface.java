@@ -18,7 +18,7 @@ public class Interface {
 	private static ArrayList<Double> donnees= new ArrayList<Double>();
 	
 	/** Chemin où se trouve le fichier excel */
-	private static String path = "excel/khi2.xlsm";
+	private static String path = "excel/KhiDeux.xlsm";
 
     /**
      * TODO commenter le rôle de cette méthode
@@ -33,20 +33,18 @@ public class Interface {
     	
     	// Simulation de la loi exponentielle
     	donnees = proba.loiExponentielle(4.0);
-    	
-    	// Simulation de la loi de Poisson
-    	donnees = proba.loiPoisson();
-    	
-    	// Simulation de la loi normale
-    	donnees = proba.loiNormale();
-    	
-    	// Simulation de la loi de Weibull
-    	donnees = proba.loiDeWeibull(1, 3.25);
-    	
     	// Envoi des données vers le fichier Excel
-    	ExcelManager excelManager = new ExcelManager(path, "exponentielle");
+    	ExcelManager excelManager = new ExcelManager(path, "Exponentielle");
     	excelManager.writeExcelFile(donnees);
     	
+//    	// Simulation de la loi de Poisson
+//    	donnees = proba.loiPoisson();
+//    	
+//    	// Simulation de la loi normale
+//    	donnees = proba.loiNormale();
+//    	
+//    	// Simulation de la loi de Weibull
+//    	donnees = proba.loiDeWeibull(1, 3.25);    	
     	
     	System.out.println("--- FIN ---");
     }
