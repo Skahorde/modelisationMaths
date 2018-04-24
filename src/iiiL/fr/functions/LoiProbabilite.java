@@ -6,8 +6,6 @@ package iiiL.fr.functions;
 
 import java.util.ArrayList;
 
-import org.apache.log4j.lf5.viewer.LogFactor5InputDialog;
-
 /**
  * TODO commenter les responsabilités de la classe
  * @author Sandrine FOCK-CHOW-THO & Emmanuel PEREZ
@@ -80,15 +78,20 @@ public class LoiProbabilite {
 	 * @param lambda paramètre de la loi exponentielle
 	 * @return une liste de nombres générés aléatoirement selon la loi de Poisson
 	 */
-	public static ArrayList<Double> loiPoisson(ArrayList<Double> data, double p, double lambda) {
+	public static ArrayList<Double> loiPoissondouble (int p, double lambda) {
+		// Liste de nombres aléatoires générés suivant la loi Uniforme (0,1)
+		ArrayList<Double> listeNbAleatoires = loiUniforme();
 		// Le résultat final
-		ArrayList<Double> result = new ArrayList<Double>();
-		// t représente un intervalle de temps entre 2 évènements 
-		double t = p/lambda;
+		ArrayList<Double> listeResultats = new ArrayList<Double>();
+		
+		// Parcours de la liste et calcul via la fonction inverse de la loi
+		for (int i = 0; i < listeNbAleatoires.size(); i ++) {
+			int fact = Calcul.factorielle(p);
+			double calcul = Math.exp(-lambda) * Math.pow(lambda, p) / fact;
+			listeResultats.add(calcul);
+		}
 
-		// TODO
-
-		return result;
+		return listeResultats;
 	}
 
 	/**

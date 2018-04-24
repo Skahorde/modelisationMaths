@@ -4,7 +4,6 @@
  */
 package iiiL.fr.ihm;
 
-import iiiL.fr.functions.Calcul;
 import java.util.ArrayList;
 import iiiL.fr.functions.LoiProbabilite;
 
